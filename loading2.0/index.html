@@ -1,0 +1,49 @@
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Loading Screen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="particles-js">
+        <div class="btext">
+            <h1>YOUR NAME| FiveM</h1>
+            <p>Premi spazio per stoppare la musica</p>
+            <a href="index.html" class="btn">https://discord.gg/vNC8SyH6AE</a>
+        </div>
+    </div>
+    <div class="textcopy">Sviluppato da &copy;  AO BUONGIORNO#2910</div>
+
+    <audio id="leson" src="music/music.ogg" autoplay="true" hidden="true" loop="true"/>
+	<script>
+	
+    var play = true;
+    var myAudio = document.getElementById("leson");
+    
+    myAudio.volume = 0.1;
+	
+	
+    function onKeyDown(event) {
+            switch (event.keyCode) {
+                case 32: //SpaceBar                    
+                    if (play) {
+                        myAudio.pause();
+                        play = false;
+                    } else {
+                        myAudio.play();
+                        play = true;
+                    }
+                    break;
+            }
+      return false;
+    }
+    window.addEventListener("keydown", onKeyDown, false);
+    </script>
+
+    <div id="particles-js"></div>
+    <script type="text/javascript" src="particles.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+</body>
+</html>
